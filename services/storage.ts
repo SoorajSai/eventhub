@@ -58,7 +58,6 @@ const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 export const StorageService = {
   getEvents: async (): Promise<Event[]> => {
-    await delay(300);
     const stored = localStorage.getItem(EVENTS_KEY);
     if (!stored) {
       localStorage.setItem(EVENTS_KEY, JSON.stringify(SEED_EVENTS));
